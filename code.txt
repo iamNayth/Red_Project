@@ -1,1 +1,11 @@
 CODE
+
+//ENVOYER
+
+git add *.*
+git commit -m "description"
+git push -u origin main
+
+//RECUPERER
+
+git pull
