@@ -1,5 +1,7 @@
 CODE
 
+cd Documents/Git/Red_Project
+
 //ENVOYER
 
 git add *.*
