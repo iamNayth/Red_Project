@@ -12,7 +12,7 @@ a {
 main {
     height: 100%;
     position: relative;
-padding-left: 25%;
+    padding-left: 25%;
 }
 .navbar.fixed-left {
     position: fixed;
