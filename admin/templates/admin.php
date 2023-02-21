@@ -2,8 +2,8 @@
 $msg = "";?>
 <?php ob_start(); ?>
     <h1>ADMIN</h1><br>
-    <h2>Tout les admins</h2>
-    <table class="table" style="margin-top: 15px; width:100%">
+    <h2 class="mb-5">Tout les admins</h2>
+    <table class="table mb-5" style="margin-top: 15px; width:100%">
     <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -28,7 +28,7 @@ $msg = "";?>
         ?>
     </tbody>
 </table>
-<h2 class="mb-2">Ajouter</h2>
+<h2 class="mb-5">Ajouter</h2>
 <form action="" method="POST">
     <label class="form-label">Nickname</label>
     <input type="text" class="form-control mb-3" placeholder="Nom" name="nickname">

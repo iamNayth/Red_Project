@@ -38,7 +38,7 @@ function addAdmin()
         $sth->bindParam(':email', $email, PDO::PARAM_STR);
         $sth->bindParam(':password', $password, PDO::PARAM_STR);
         $sth->execute();
-        $msg="Votre nouvel admin à bien été ajouté.";
+        $msg = "Votre nouvel admin à bien été ajouté.";
         }
     }    
 }

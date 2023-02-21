@@ -1,9 +1,9 @@
 <?php
 
 
-require_once('model/connexion.php');
+require_once('../model/connexion.php');
 
 
 function getHomepage() {
-    require('templates/homepage.php');
+    require('../templates/homepage.php');
 }
