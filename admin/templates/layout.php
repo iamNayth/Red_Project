@@ -8,7 +8,7 @@
     <link href="assets/style.css" rel="stylesheet" />
 </head>
   <body class="d-flex w-100">
-    <nav class="navbar fixed-left d-flex flex-column align-items-center bg-dark h-100 w-25 pt-5 gap-5 ps-2 fs-5 pb-5 sticky-top">
+    <nav class="navbar fixed-left d-flex flex-column align-items-center bg-dark h-100 pt-5 gap-3 ps-2 fs-5 pb-5">
         <h1 class="text-white text-center mb-5">Tableau de bord</h1>
         <a href="index.php?page=accueil" class="text-white">Accueil</a>
         <a href="" class="text-white">Produits</a>
