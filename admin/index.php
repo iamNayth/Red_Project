@@ -14,11 +14,13 @@ try {
         elseif ($page == "accueil"){
             getHomepage();
         }
+    } else {
+        getHomepage();
     }
 
  } catch (Exception $e) { //S'il y'a une erreur...
     $errorMessage = $e->getMessage();
  
-    require('templates/error.php');
+    //require('templates/error.php');
  
  }
