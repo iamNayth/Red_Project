@@ -1,8 +1,10 @@
-<?php $title = "Admin"; ?>
+<?php $title = "Admin"; 
+$msg = "";?>
 <?php ob_start(); ?>
-    <h1>ADMIN</h1>
-    <table class="table table-bordered mx-auto" style="margin-top: 15px">
-    <thead>
+    <h1>ADMIN</h1><br>
+    <h2>Tout les admins</h2>
+    <table class="table" style="margin-top: 15px; width:100%">
+    <thead class="table-dark">
         <tr>
             <th>ID</th>
             <th>Pseudo</th>
@@ -15,27 +17,28 @@
         <?php
         //Récupération des données de l'administrateur
         foreach($admins as $admin){?>
-        <tr>
+        <tr class="table-striped">
             <td><?=$admin['id']?></td>
             <td><?=$admin['nickname']?></td>
             <td><?=$admin['email']?></td>
-            <td>
-                <div class="container d-flex flex-column justify-content-evenly" style="height: 170px">
-                    <div class="row">
-                        <a href="index.php?page=14&idproduct=<?php echo $admin['id']?>" class="btn btn-primary">Ajouter une photo</a>
-                    </div>
-                    <div class="row">
-                        <a href="index.php?page=3&id=<?php echo $admin['id']?>" class="btn btn-warning w-50">Modifier</a>
-                        <a href="index.php?page=4&id=<?php echo $admin['id']?>" class="btn btn-danger w-50" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a>
-                    </div>
-                </div>      
-            </td>
+            <td><a href="index.php?page=admin&id=<?php echo $admin['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
         </tr>
         <?php
         }
         ?>
     </tbody>
 </table>
+<h2 class="mb-2">Ajouter</h2>
+<form action="" method="POST">
+    <label class="form-label">Nickname</label>
+    <input type="text" class="form-control mb-3" placeholder="Nom" name="nickname">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control mb-3" placeholder="name@exemple.com" name="email">
+    <label class="form-label">Mot de passe</label>
+    <input type="password" class="form-control mb-3" placeholder="Mot de passe" name="password">
+    <button class="btn btn-primary" type="submit" name="addAdmin" >Ajouter</button>
+</form>
+<?= $msg ?>
 <?php $content = ob_get_clean();
 
 require('layout.php');?>
