@@ -44,13 +44,15 @@ if (isset($_POST['submit'])){
     <link href="../assets/style.css" rel="stylesheet" />
 </head>
     <body>
-    <main id="main-authent" class="h-100">
-        <div class="d-flex align-items-center justify-centent-center flex-column h-100">
-            <h1 class="mb-5">Se connecter</h1>
+    <main id="main-authent" class="h-100 bg-dark">
+        <div class="d-flex align-items-center justify-centent-center flex-column">
+            <h1 class="mb-5 mt-5 text-white">Se connecter</h1>
             <form action="" method="post">
                 <input class="form-control"type="text" name="nickname" placeholder="Nickname"><br>
                 <input class="form-control"type="password" name="password" placeholder="Mot de passe"><br>
-                <button class="btn btn-primary" type="submit" name="submit">Se connecter</button>
+                <div class=" d-flex align-items-center justify-content-center">
+                    <button class="btn btn-primary text-center" type="submit" name="submit">Se connecter</button>
+                </div>
             </form>
         </div>
     </main>

@@ -6,6 +6,7 @@ session_start();
 
 try {
 
+    require_once('../controllers/categorie.php');
     require_once('../controllers/homepage.php');
     require_once('../controllers/admin.php');
     
@@ -16,7 +17,7 @@ try {
 
     if(isset($_GET['action']) && $_GET['action'] == "signout"){
         session_destroy();
-        header('location: ../index.php');
+        header('location: authentification.php');
     }
 
     if( isset($_GET['page'])) {
@@ -24,8 +25,11 @@ try {
         if($page == "admin"){
             admins();
         }
-        elseif ($page == "accueil"){
+        elseif ($page == "accueil") {
             getHomepage();
+        }
+        elseif ($page == "categorie") {
+            getCategorie();
         }
     } else {
         getHomepage();
