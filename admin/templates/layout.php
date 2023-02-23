@@ -12,7 +12,7 @@
         <h1 class="text-white text-center mb-5">Tableau de bord</h1>
         <a href="../public/index.php?page=accueil" class="text-white">Accueil</a>
         <a href="" class="text-white">Produits</a>
-        <a href="" class="text-white">Photos</a>
+        <a href="../public/index.php?page=picture" class="text-white">Photos</a>
         <a href="../public/index.php?page=categorie" class="text-white">Catégories</a>
         <a href="" class="text-white">Commandes</a>
         <a href="" class="text-white">Clients</a>

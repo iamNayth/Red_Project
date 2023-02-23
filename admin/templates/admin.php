@@ -1,7 +1,7 @@
 <?php $title = "Admin"; 
 $msg = "";?>
 <?php ob_start(); ?>
-    <h1>ADMIN</h1><br>
+    <h1 class="mb-5">ADMIN</h1>
     <h2 class="mb-5">Tout les admins</h2>
     <table class="table mb-5" style="margin-top: 15px; width:100%">
     <thead class="table-dark">
@@ -15,7 +15,6 @@ $msg = "";?>
 
     <tbody>
         <?php
-        //Récupération des données de l'administrateur
         foreach($admins as $admin){?>
         <tr class="table-striped">
             <td><?=$admin['id']?></td>
