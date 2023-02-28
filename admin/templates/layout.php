@@ -11,11 +11,11 @@
     <nav id="nav-layout" class="navbarr fixed-left d-flex flex-column bg-dark h-100 gap-5 ps-5 pt-5 ps-2 fs-5 pb-5">
         <h1 class="text-white text-center mb-5">Tableau de bord</h1>
         <a href="../public/index.php?page=accueil" class="text-white">Accueil</a>
-        <a href="" class="text-white">Produits</a>
+        <a href="../public/index.php?page=products" class="text-white">Produits</a>
         <a href="../public/index.php?page=picture" class="text-white">Photos</a>
         <a href="../public/index.php?page=categorie" class="text-white">Catégories</a>
-        <a href="" class="text-white">Commandes</a>
-        <a href="" class="text-white">Clients</a>
+        <a href="../public/index.php?page=orders" class="text-white">Commandes</a>
+        <a href="../public/index.php?page=users" class="text-white">Clients</a>
         <a href="../public/index.php?page=admin" class="text-white">Admin</a>
         <a href="../public/index.php?action=signout">Se déconnecter</a>
     </nav>

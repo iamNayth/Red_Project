@@ -2,8 +2,12 @@
 require_once('../model/connexion.php');
 require_once("../model/admin_managment.php");
 
-function admins() {
+function displayadmins() {
     $admins = displayAdmin();
-    $addAdmin = addAdmin();
     require("../templates/admin.php");
+}
+
+if (isset($_POST['addAdmin'])) {
+    $addAdmin = addAdmin();
+    require('../templates/admin.php');
 }

@@ -50,6 +50,13 @@ a {
     }
   }
 
+  td {
+    vertical-align: middle;
+  }
+  td img {
+    height: 50px;
+  }
+
   
 
 

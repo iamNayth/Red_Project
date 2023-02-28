@@ -1,6 +1,6 @@
 <?php
 
-function displayPictures() {
+function getPictures() {
     $database = dbConnect();
 
     $statement = $database->prepare("SELECT * FROM pictures");
@@ -19,8 +19,10 @@ function displayPictures() {
 
 function addPicture() {
         $database = dbConnect();
+        
         if (isset($_FILES['picture']) && $_FILES['picture']['error'] == 0
         ||  (isset($_POST['name']) || !empty($_POST['name'])))   {  {
+            $name = strip_tags($_POST['name']);
             // Testons si le fichier n'est pas trop gros
             if ($_FILES['picture']['size'] <= 1000000) {
                 // Testons si l'extension est autorisée

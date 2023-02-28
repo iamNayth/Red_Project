@@ -10,7 +10,11 @@ try {
     require_once('../controllers/homepage.php');
     require_once('../controllers/admin.php');
     require_once('../controllers/picture.php');
+    require_once('../controllers/products.php');
+    require_once('../controllers/orders.php');
+    require_once('../controllers/users.php');
     require_once('../controllers/add_categorie.php');
+    require_once('../controllers/add_Scategorie.php');
     require_once('../controllers/add_picture.php');
     
     if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
@@ -21,37 +25,43 @@ try {
     if(isset($_GET['action']) && $_GET['action'] == "signout"){
         session_destroy();
         header('location: authentification.php');
-    }
-
-    if (isset($_GET['action']) && $_GET['action'] !== '') {
-        if ($_GET['action'] === 'addPicture') {
-            addPicture();
-            header('location:../templates/picture.php');
-        }
-    }
+    } 
+    
 
     if( isset($_GET['page'])) {
         $page = strval($_GET['page']);
         if($page == "admin"){
-            admins();
+            displayadmins();
         }
         elseif ($page == "accueil") {
-            getHomepage();
+            displayHomepage();
         }
         elseif ($page == "categorie") {
-            getCategorie();
+            displayCategorie();
         }
         elseif ($page == "picture") {
-            getPicture();
+            displayPicture();
+        }
+        elseif ($page == "products") {
+            displayProduct();
+        }
+        elseif ($page == "orders") {
+            displayOrder();
+        }
+        elseif ($page == "users") {
+            displayUser();
         }
         elseif ($page == "add_categorie") {
-            getAdd_Categorie();
+            displayAdd_Categorie();
+        }
+        elseif ($page == "add_Scategorie") {
+            displayAdd_SCategorie();
         }
         elseif ($page == "add_picture") {
-            getAdd_Picture();
+            displayAdd_Picture();
         }
     } else {
-        getHomepage();
+        displayHomepage();
     }
     
 

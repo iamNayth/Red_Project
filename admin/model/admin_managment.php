@@ -22,12 +22,13 @@ function displayAdmin()
 function addAdmin()
 {
     $database = dbConnect();
+    $msg= '';
 
-    if(isset($_POST['addAdmin'])){
-        if ((!isset($_POST['nickname']) || empty($_POST['nickname']))
-        || (!isset($_POST['password']) || empty($_POST['password']))
-        || (!isset($_POST['email']) || empty($_POST['email'])))   {       
-            echo 'Il faut faut remplir tous les champs';
+    
+    if ((!isset($_POST['nickname']) || empty($_POST['nickname']))
+    || (!isset($_POST['password']) || empty($_POST['password']))
+    || (!isset($_POST['email']) || empty($_POST['email'])))   {       
+        echo 'Il faut faut remplir tous les champs';
     } else {
         $nickname = strip_tags($_POST['nickname']);
         $email = strip_tags($_POST['email']);
@@ -39,9 +40,9 @@ function addAdmin()
         $sth->bindParam(':password', $password, PDO::PARAM_STR);
         $sth->execute();
         $msg = "Votre nouvel admin à bien été ajouté.";
-        }
-    }    
-}
+    }
+}    
+
 
 function suppAdmin($id, $database)
 {

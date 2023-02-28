@@ -4,6 +4,6 @@
 require_once('../model/connexion.php');
 
 
-function getHomepage() {
+function displayHomepage() {
     require('../templates/homepage.php');
 }

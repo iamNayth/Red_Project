@@ -1,7 +1,15 @@
 <?php
 require_once('../model/connexion.php');
 require_once('../model/categorie_managment.php');
-function getAdd_Categorie() {
 
+function displayAdd_Categorie() {
+    $msg ="";
+    require('../templates/add_categorie.php');
+
+}
+
+if (isset($_POST['addCategorie'])) {
+    $msg = addCategories();
     require('../templates/add_categorie.php');
 }
+

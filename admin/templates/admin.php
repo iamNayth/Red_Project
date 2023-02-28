@@ -28,14 +28,14 @@ $msg = "";?>
     </tbody>
 </table>
 <h2 class="mb-5">Ajouter</h2>
-<form action="" method="POST">
+<form action="../controllers/admin.php" method="POST">
     <label class="form-label">Nickname</label>
     <input type="text" class="form-control mb-3" placeholder="Nom" name="nickname">
     <label class="form-label">Email</label>
     <input type="email" class="form-control mb-3" placeholder="name@exemple.com" name="email">
     <label class="form-label">Mot de passe</label>
     <input type="password" class="form-control mb-3" placeholder="Mot de passe" name="password">
-    <button class="btn btn-primary" type="submit" name="addAdmin" >Ajouter</button>
+    <button class="btn btn-primary" type="submit" name="addAdmin">Ajouter</button>
 </form>
 <?= $msg ?>
 <?php $content = ob_get_clean();
