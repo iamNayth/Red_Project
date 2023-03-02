@@ -1,7 +1,7 @@
-<?php $title = "Ajouter"; ?>
+<?php $title = "Modifier"; ?>
 <?php ob_start(); ?>
-    <h1 class="mb-5"><a href="../public/index.php?page=sub_categorie" class="btn btn-secondary me-3">Retour</a>ACCUEIL</h1>
-    <h2 class="mb-5">Ajouter une sous-catégorie</h2>
+    <h1 class="mb-5">MODIFIER</h1>
+    <h2 class="mb-5"><a href="../public/index.php?page=categorie" class="btn btn-secondary me-3">Retour</a>Modifier la sous-catégorie</h2>
         <form action="../controllers/add_Scategorie.php" method="POST">
             <label class="form-label">Nom</label>
             <input type="text" class="form-control mb-3" placeholder="Nom" name="name">
@@ -16,7 +16,7 @@
             }
             ?>
             </select>
-            <button class="btn btn-primary" type="submit" name="addSCategorie" >Ajouter</button>
+            <button class="btn btn-primary" type="submit" name="addSCategorie">Valider</button>
         </form>
 
 <?php $content = ob_get_clean();?>

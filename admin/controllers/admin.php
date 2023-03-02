@@ -11,3 +11,9 @@ if (isset($_POST['addAdmin'])) {
     $addAdmin = addAdmin();
     require('../templates/admin.php');
 }
+
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $database = dbConnect();
+    suppAdmin($id, $database);  
+}

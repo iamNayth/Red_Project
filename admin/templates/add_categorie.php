@@ -1,6 +1,6 @@
-<?php $title = "Accueil"; ?>
+<?php $title = "Ajouter"; ?>
 <?php ob_start(); ?>
-    <h1 class="mb-5">Ajouter</h1>
+    <h1 class="mb-5"><a href="../public/index.php?page=categorie" class="btn btn-secondary me-3">Retour</a>Ajouter</h1>
     <h3 class="text-success"><?=$msg?></h3>
     <section class="d-flex justify-centent-between gap-5 w-100">
     <div class="w-50">
@@ -20,4 +20,4 @@
 </section>
 
 <?php $content = ob_get_clean();?>
-<?php require('layout.php') ?>
+<?php require('../templates/layout.php') ?>

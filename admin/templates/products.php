@@ -1,8 +1,7 @@
-<?php $title = "Accueil"; ?>
+<?php $title = "Produits"; ?>
 <?php ob_start(); ?>
     <h1 class="mb-5">PRODUITS</h1>
-    <a href="../public/index.php?page=add_product" class="btn btn-primary">Ajouter</a>
-    <h2 class="mb-5 mt-5">Tout les produits</h2>
+    <h2 class="mb-5 mt-5">Tout les produits<a href="../public/index.php?page=add_product" class="btn btn-primary ms-3">Ajouter</a></h2>
     <table class="table mb-5" style="margin-top: 15px; width:100%">
     <thead class="table-dark">
         <tr>

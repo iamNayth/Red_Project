@@ -21,7 +21,7 @@ function getCategories() {
 function getS_Categories() {
     $database = dbConnect();
 
-    $statement = $database->prepare("SELECT * FROM subcategories");
+    $statement = $database->prepare("SELECT sc.*, c.id, c.name as cat_name FROM subcategories sc INNER JOIN categories c ON c.id = sc.id_categories");
     $statement->execute();
     $s_categories = [];
     while (($row = $statement->fetch())) {
@@ -29,8 +29,8 @@ function getS_Categories() {
             'id' => $row['id'],
             'name' => $row['name'],
             'description' => $row['description'],
-            //'id_categorie' => $row['id_categorie'],
-            
+            'id_categories' => $row['id_categories'],
+            'cat_name' => $row['cat_name']
         ];
         $s_categories[] = $scategorie;
     }
@@ -85,10 +85,12 @@ function addS_Categories()
     } else {
         $name = strip_tags($_POST['name']);
         $description = strip_tags($_POST['description']);
+        $id_categories = ($_POST['id_cat']);
 
-        $sth = $database->prepare("INSERT INTO `subcategories`(`name`,`description`) VALUES (:name,:description)");
+        $sth = $database->prepare("INSERT INTO `subcategories`(`name`,`description`,`id_categories`) VALUES (:name,:description,:id_categories)");
         $sth->bindParam(':name', $name, PDO::PARAM_STR);
         $sth->bindParam(':description', $description, PDO::PARAM_STR);
+        $sth->bindParam(':id_categories', $id_categories, PDO::PARAM_STR);
         $sth->execute();
         }
     }    
@@ -103,9 +105,14 @@ function suppCategorie($id, $database)
     $req->bindValue(':id', $id, PDO::PARAM_INT);
     $req->execute();
 }
-
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
+function suppSCategorie($id, $database)
+{
     $database = dbConnect();
-    suppCategorie($id, $database);  
+
+    $query = 'DELETE FROM subcategories WHERE id=:id'; 
+    $req = $database->prepare($query);
+    $req->bindValue(':id', $id, PDO::PARAM_INT);
+    $req->execute();
 }
+
+

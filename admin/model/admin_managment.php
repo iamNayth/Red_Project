@@ -54,8 +54,4 @@ function suppAdmin($id, $database)
     $req->execute();
 }
 
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-    $database = dbConnect();
-    suppAdmin($id, $database);  
-}
+

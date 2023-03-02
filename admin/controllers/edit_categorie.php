@@ -1,13 +1,11 @@
 <?php
-
 require_once('../model/connexion.php');
 require_once('../model/categorie_managment.php');
 
-
-function displayCategorie() {
+function displayEdit_Categorie() {
+    $msg ="";
     $categories = getCategories();
-    $s_categories = getS_Categories();
-    require('../templates/categorie.php');
-}
+    require('../templates/edit_categorie.php');
 
+}
 
