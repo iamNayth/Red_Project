@@ -7,3 +7,8 @@ function displayAdd_Product() {
     $products = getProducts();
     require('../templates/add_product.php');
 }
+
+if (isset($_POST['addProducts'])) {
+    $msg = addProducts();
+    require('../templates/add_product.php');
+}
