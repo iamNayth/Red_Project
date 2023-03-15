@@ -10,10 +10,23 @@
             <label class="form-label">Description</label>
             <textarea type="textaera" class="form-control mb-3" placeholder="Description" name="description"></textarea>
             <label class="form-label">Prix</label>
-            <input type="text" class="form-control mb-3" placeholder="Prix du produit en €" name="price">
+            <input type="text" class="form-control mb-3" placeholder="Prix du produit en €" name="price"><br>
             <label for="formFile" class="form-label">Ajouter une image au produit</label>
-            <input class="form-control mb-3" type="file" multiple name="picture">
-            <button class="btn btn-primary" type="submit" name="addProducts" >Ajouter</button>
+            <input type="text" class="form-control mb-3" placeholder="Nom de la première image" name="name_picture-1">
+            <input class="form-control mb-3" type="file" name="picture-1">
+            <label for="formFile" class="form-label">Ajouter une deuxième image</label>
+            <input type="text" class="form-control mb-3" placeholder="Nom de la deuxième image" name="name_picture-2">
+            <input class="form-control mb-3" type="file" name="picture-2">
+            <label for="formFile" class="form-label">Ajouter une troisième image</label>
+            <input type="text" class="form-control mb-3" placeholder="Nom de la troisième image" name="name_picture-3">
+            <input class="form-control mb-3" type="file" name="picture-3">
+            <label for="formFile" class="form-label">Ajouter une quatrième image</label>
+            <input type="text" class="form-control mb-3" placeholder="Nom de la quatrième image" name="name_picture-4">
+            <input class="form-control mb-3" type="file" name="picture-4">
+            <label for="formFile" class="form-label">Ajouter une cinquième image</label>
+            <input type="text" class="form-control mb-3" placeholder="Nom de la cinquième image" name="name_picture-5">
+            <input class="form-control mb-3" type="file" name="picture-5">
+            <button class="btn btn-primary" type="submit" name="addProducts">Ajouter</button>
         </form>
     </div>
     <div class="w-50">

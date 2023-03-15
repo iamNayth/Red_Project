@@ -9,6 +9,6 @@ function displayAdd_Product() {
 }
 
 if (isset($_POST['addProducts'])) {
-    $msg = addProducts();
+    addProducts();
     require('../templates/add_product.php');
 }
