@@ -41,7 +41,7 @@
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <div class="input-group mb-3 w-75 position-relative">
                         <input type="text" class="form-control bg-body-secondary rounded-pill mont h-75" placeholder="Rechercher" aria-label="Research" aria-describedby="button-addon2">
-                        <button class="position-absolute bg-transparent border-0" style="top: 2px; right: 0"><img src="../admin/assets/icons/search.svg"></button>
+                        <button class="position-absolute bg-transparent border-0 m-0 p-0" style="top: -5px; right: 10px"><img src="../admin/assets/icons/search.svg"></button>
                     </div>
                 </div>
             </div>

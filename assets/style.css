@@ -39,6 +39,15 @@ a {
     color: black;
 }
 
+button {
+    background: none;
+    border: solid 3px #496992;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #496992;
+    padding: 5px 15px;
+}
+
 /****Fonts****/
 
 .right {
@@ -61,4 +70,17 @@ footer {
     height: 400px;
     background: #496992;
     position: relative;
+}
+
+/****Homepage****/
+
+#infos {
+    min-height: 800px;
+    background: #2ec4b6;
+}
+
+#logo-background {
+    background-image: url('../assets/img/info-background.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
