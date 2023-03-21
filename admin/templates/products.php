@@ -5,11 +5,11 @@
     <table class="table mb-5" style="margin-top: 15px; width:100%">
     <thead class="table-dark">
         <tr>
-            <th>ID</th>
             <th>Identifiant Produit</th>
             <th>Nom</th>
             <th>Description</th>
             <th>Prix</th>
+            <th>Images</th> 
             <th class="col-2 text-center">Action</th>
         </tr>
     </thead>
@@ -18,10 +18,11 @@
         <?php
         foreach($products as $product){?>
         <tr class="table-striped">
-            <td><?=$product['id']?></td>
+            <td><?=$product['ident_product']?></td>
             <td><?=$product['name']?></td>
             <td><?=$product['description']?></td>
-            <td><?=$product['img_path']?></td>
+            <td><?=$product['price']?></td>
+            <td><?=$product['pic_path']?></td>
             <td><a href="index.php?page=prod$products&id=<?php echo $product['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
         </tr>
         <?php
@@ -31,4 +32,4 @@
 </table>
 
 <?php $content = ob_get_clean();?>
-<?php require('layout.php') ?>
+<?php require('../templates/layout.php') ?>

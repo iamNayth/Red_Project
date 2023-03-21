@@ -4,6 +4,8 @@
     <section class="d-flex justify-centent-between gap-5 w-100">
     <div class="w-50">
         <h2 class="mb-5">Ajouter un produit</h2>
+        <h3><?= $msg?></h3>
+        
         <form action="../controllers/add_product.php" method="POST" enctype="multipart/form-data">
             <label class="form-label">Nom</label>
             <input type="text" class="form-control mb-3" placeholder="Nom" name="name">

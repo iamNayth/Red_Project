@@ -8,8 +8,11 @@ function displayAdd_Categorie() {
 
 }
 
-if (isset($_POST['addCategorie'])) {
-    $msg = addCategories();
-    require('../templates/add_categorie.php');
-}
+function validateAddCategorie() {
 
+    if (isset($_POST['addCategorie'])) {
+        $msg = addCategories();
+        require('../templates/add_categorie.php');
+    }
+    
+}

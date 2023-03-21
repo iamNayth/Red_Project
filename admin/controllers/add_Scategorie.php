@@ -9,9 +9,11 @@ function displayAdd_SCategorie() {
 
 }
 
-
-if (isset($_POST['addSCategorie'])) {
-    $msg = addS_Categories();
-    require('../templates/add_Scategorie.php');
+function validate_add_subCategorie() {
+    
+    if (isset($_POST['addSCategorie'])) {
+        $msg = addS_Categories();
+        require('../templates/add_Scategorie.php');
+    }
+    
 }
-

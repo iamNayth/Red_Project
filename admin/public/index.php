@@ -69,8 +69,14 @@ try {
         elseif ($page == "add_categorie") {
             displayAdd_Categorie();
         }
+        elseif ($page == "validate_add_categorie") {
+            validateAddCategorie();
+        }
         elseif ($page == "add_Scategorie") {
             displayAdd_SCategorie();
+        }
+        elseif ($page == "validate_add_scategorie") {
+            validate_add_subCategorie();
         }
         elseif ($page == "edit_categorie") {
             displayEdit_Categorie();

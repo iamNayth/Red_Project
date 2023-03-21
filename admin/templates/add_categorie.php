@@ -5,7 +5,7 @@
     <section class="d-flex justify-centent-between gap-5 w-100">
     <div class="w-50">
         <h2 class="mb-5">Ajouter une catégorie</h2>
-        <form action="../controllers/add_categorie.php" method="POST" enctype="multipart/form-data">
+        <form action="index.php?page=validate_add_categorie" method="POST" enctype="multipart/form-data">
             <label class="form-label">Nom</label>
             <input type="text" class="form-control mb-3" placeholder="Nom" name="name">
             <label class="form-label">Description</label>

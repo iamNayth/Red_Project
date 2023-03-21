@@ -2,8 +2,7 @@
 
 function getProducts() {
     $database = dbConnect();
-
-    $statement = $database->prepare("SELECT prod.*, pic.id FROM products prod INNER JOIN pictures pic ON pic.id = prod.id_pictures");
+    $statement = $database->prepare("SELECT prod.*, pic.id, pic.path as pic_path FROM products prod INNER JOIN pictures pic ON pic.id_products = prod.id");
     $statement->execute();
     $products = [];
     while (($row = $statement->fetch())) {
@@ -13,6 +12,7 @@ function getProducts() {
             'name' => $row['name'],
             'description' => $row['description'],
             'price' => $row['price'],
+            'pic_path' => $row['pic_path']
         ];
         $products[] = $product;
     }
@@ -20,27 +20,43 @@ function getProducts() {
 }
 
 function addProducts() {
-    $msg = "";
+    global $msg;
+    global $count;
     $database = dbConnect();
-    
     if ((!isset($_POST['name']) || empty($_POST['name']))
     || (!isset($_POST['description']) || empty($_POST['description']))
-    || (!isset($_POST['picture-1']) || empty($_POST['picture-1']))
+    || (!isset($_FILES['picture-1']) || empty($_FILES['picture-1']))
+    || (!isset($_POST['name_picture-1']) || empty($_POST['name_picture-1']))
     || (!isset($_POST['price']) || empty($_POST['price']))) {       
-        echo 'Il faut faut remplir tous les champs';
+        $msg= 'Il faut faut remplir tous les champs';
     } else {
         $name = strip_tags($_POST['name']);
         $description = strip_tags($_POST['description']);
         $price = strip_tags($_POST['price']);
         $ident_product = time();
-        $count = 0;
+        
+        
+        $sql = "INSERT INTO products (ident_product, name, description, price) VALUES (:ident_product, :name,:description,:price)";
+        $stmt= $database->prepare($sql);
+        $stmt->bindParam(':ident_product', $ident_product, PDO::PARAM_INT);
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+        $stmt->execute();
 
+        //On recupère l'id du produit ajouté précédement
+        $lastProductquery = "SELECT id FROM `products` WHERE `ident_product` = :ident_product";
+        $lastProductStmt= $database->prepare($lastProductquery);
+        $lastProductStmt->bindParam(':ident_product', $ident_product, PDO::PARAM_INT);
+        $lastProductStmt->execute();
+        $productLastId = $lastProductStmt->fetch();
+        
         for ($i = 1; $i <= 5; $i++) {
             if (isset($_FILES['picture-' . $i]) && $_FILES['picture-' . $i]['error'] === 0) {
                 $count++;
             }
         }
-
+        
         for ($i = 1; $i <= $count; $i++) {
             if (isset($_FILES['picture-' . $i]) && $_FILES['picture-' . $i]['error'] == 0
             || (isset($_POST['name_picture-'.$i]) || !empty($_POST['name_picture-'.$i]))) {
@@ -53,33 +69,23 @@ function addProducts() {
                     
                     if (in_array($extension, $allowedExtensions)) {
                         // On peut valider le fichier et le stocker définitivement
-                        $name_picture = strip_tags($_POST['name_picture'.$i]);
-                        $path = '../assets/uploads/' . basename($_FILES['picture']['name']);
+                        $name_picture = strip_tags($_POST['name_picture-' . $i]);
+                        $path = '../assets/uploads/' . basename($_FILES['picture-' . $i]['name']);
                         move_uploaded_file($_FILES['picture-' . $i]['tmp_name'], $path);
                         
                         
-                        $sth = $database->prepare("INSERT INTO `pictures`(`name`,`path`,`id_products`) VALUES (:name,:path;:id_products)");
+                        $sth = $database->prepare("INSERT INTO `pictures`(`name`,`path`,`id_products`) VALUES (:name,:path,:id_products)");
                         $sth->bindParam(':name', $name_picture, PDO::PARAM_STR);
                         $sth->bindParam(':path', $path, PDO::PARAM_STR);
-                        $sth->bindParam(':id_products', $ident_product, PDO::PARAM_INT);
+                        $sth->bindParam(':id_products', $productLastId['id'], PDO::PARAM_INT);
                         $sth->execute();
-                        return $msg= "L'ajout a bien été effectué !";
+                        $msg= "Produit ajouté !";
                     }
                 }
             }
         }
-        
-        $sql = "INSERT INTO products (ident_product, name, description, price) VALUES (:ident_product, :name,:description,:price)";
-        $stmt= $database->prepare($sql);
-        $stmt->bindParam(':ident_product', $ident_product, PDO::PARAM_INT);
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-        $stmt->bindParam(':price', $price, PDO::PARAM_STR);
-        $stmt->execute();
-
-
-
         $msg = "L'ajout à bien été effectué.";
     }
+return $msg;
 } 
     

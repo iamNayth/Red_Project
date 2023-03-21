@@ -77,11 +77,11 @@ function addCategories() {
 function addS_Categories()
 {
     $database = dbConnect();
-
+    $msg ="";
     if(isset($_POST['addSCategorie'])){
         if ((!isset($_POST['name']) || empty($_POST['name']))
         || (!isset($_POST['description']) || empty($_POST['description'])))   {       
-            echo 'Il faut faut remplir tous les champs';
+            $msg = 'Il faut faut remplir tous les champs';
     } else {
         $name = strip_tags($_POST['name']);
         $description = strip_tags($_POST['description']);
@@ -92,8 +92,10 @@ function addS_Categories()
         $sth->bindParam(':description', $description, PDO::PARAM_STR);
         $sth->bindParam(':id_categories', $id_categories, PDO::PARAM_STR);
         $sth->execute();
+        $msg= "Sous-catégorie ajoutée !";
         }
-    }    
+    } 
+    return $msg;   
 }
 
 function suppCategorie($id, $database)
@@ -113,6 +115,16 @@ function suppSCategorie($id, $database)
     $req = $database->prepare($query);
     $req->bindValue(':id', $id, PDO::PARAM_INT);
     $req->execute();
+}
+
+function recupCategorieId($id) {
+    $database = dbConnect();
+
+    $statement = $database->prepare("SELECT * FROM categories WHERE id = :id");
+    $statement ->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $categorie = $statement-> fetch(PDO::FETCH_ASSOC);
+    return $categorie;
 }
 
 

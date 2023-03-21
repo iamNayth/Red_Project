@@ -7,4 +7,4 @@
             <button class="btn btn-primary" type="submit" name="addPicture">Ajouter</button>
         </form>
 <?php $content = ob_get_clean();?>
-<?php require('layout.php') ?>
+<?php require('../templates/layout.php') ?>
