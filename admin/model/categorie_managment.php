@@ -21,7 +21,7 @@ function getCategories() {
 function getS_Categories() {
     $database = dbConnect();
 
-    $statement = $database->prepare("SELECT sc.*, c.id, c.name as cat_name FROM subcategories sc INNER JOIN categories c ON c.id = sc.id_categories");
+    $statement = $database->prepare("SELECT sc.*, c.name as cat_name FROM subcategories sc INNER JOIN categories c ON c.id = sc.id_categories");
     $statement->execute();
     $s_categories = [];
     while (($row = $statement->fetch())) {
@@ -125,6 +125,70 @@ function recupCategorieId($id) {
     $statement->execute();
     $categorie = $statement-> fetch(PDO::FETCH_ASSOC);
     return $categorie;
+}
+function recupSubCategorieId($id) {
+    $database = dbConnect();
+
+    $statement = $database->prepare("SELECT * FROM subcategories WHERE id = :id");
+    $statement ->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $subcategorie = $statement-> fetch(PDO::FETCH_ASSOC);
+    return $subcategorie;
+}
+
+function editCategorie($id) {
+    $database = dbConnect();
+    if ((!isset($_POST['name']) || empty($_POST['name']))
+    || (!isset($_POST['description']) || empty($_POST['description']))) {     
+        echo 'Aucune entrée';
+    } else {
+        $name = strip_tags($_POST['name']);
+        $description = strip_tags($_POST['description']);
+
+        if (isset($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
+            // Testons si le fichier n'est pas trop gros
+            if ($_FILES['picture']['size'] <= 1000000) {
+                // Testons si l'extension est autorisée
+                $fileInfo = pathinfo($_FILES['picture']['name']);
+                $extension = $fileInfo['extension'];
+                $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                
+                if (in_array($extension, $allowedExtensions)) {
+                    // On peut valider le fichier et le stocker définitivement
+                    $path = '../assets/uploads/' . basename($_FILES['picture']['name']);
+                    move_uploaded_file($_FILES['picture']['tmp_name'], $path);
+                    
+                    
+                    $sth = $database->prepare("UPDATE categories SET name = :name, description = :description, img_path = :img_path WHERE id= :id");
+                    $sth->bindParam(':name', $name, PDO::PARAM_STR);
+                    $sth->bindParam(':description', $description, PDO::PARAM_STR);
+                    $sth->bindParam(':img_path', $path, PDO::PARAM_STR);
+                    $sth->bindParam(':id', $id, PDO::PARAM_INT);
+                    $sth->execute();
+                    return $msg= "La modification a bien été effectué !";
+                }
+            }
+        }
+    }
+}
+function editSubCategorie($id) {
+    $database = dbConnect();
+    if ((!isset($_POST['name']) || empty($_POST['name']))
+    || (!isset($_POST['description']) || empty($_POST['description']))) {     
+        echo 'Aucune entrée';
+    } else {
+        $name = strip_tags($_POST['name']);
+        $description = strip_tags($_POST['description']);
+        $id_categories = ($_POST['id_cat']);
+
+        $sth = $database->prepare("UPDATE subcategories SET name = :name, description = :description, id_categories = :id_categories WHERE id= :id");
+        $sth->bindParam(':name', $name, PDO::PARAM_STR);
+        $sth->bindParam(':description', $description, PDO::PARAM_STR);
+        $sth->bindParam(':id_categories', $id_categories, PDO::PARAM_INT);
+        $sth->bindParam(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+        return $msg= "Sous-catégorie modifié !";
+    }
 }
 
 

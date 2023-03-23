@@ -81,8 +81,14 @@ try {
         elseif ($page == "edit_categorie") {
             displayEdit_Categorie();
         }
+        elseif ($page == "validate_edit_categorie") {
+            validate_edit_categorie();
+        }
         elseif ($page == "edit_Scategorie") {
             displayEdit_SCategorie();
+        }
+        elseif ($page == "validate_edit_subCategorie") {
+            validate_edit_subCategorie();
         }
         elseif ($page == "add_picture") {
             displayAdd_Picture();
