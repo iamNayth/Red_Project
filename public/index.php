@@ -7,6 +7,7 @@ session_start();
 try {
     //Controllers
     require_once('../controllers/homepage.php');
+    require_once('../controllers/sign_in.php');
     
     // if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
     
@@ -19,8 +20,8 @@ try {
         if($page == "homepage"){
             displayHomepage();
         }
-        elseif ($page == "") {
-            
+        elseif ($page == "sign-in") {
+            displaySignIn();
         }
 
     } else {

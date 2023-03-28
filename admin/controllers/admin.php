@@ -17,3 +17,4 @@ if (isset($_GET['id'])) {
     $database = dbConnect();
     suppAdmin($id, $database);  
 }
+

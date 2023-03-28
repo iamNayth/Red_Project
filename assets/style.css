@@ -84,3 +84,39 @@ footer {
     background-repeat: no-repeat;
     background-position: bottom right;
 }
+.card {
+    height :20.9375em;
+    width: 16em;
+    background-color: white;
+    border: none;    
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.img-product {
+    width: 100%;
+    height: 60%;
+
+}
+.info-product {
+    height: 40%;
+    background-color: #496992;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+}
+
+/****SIGH IN****/
+
+#sign-in {
+    height: 100%;
+    width: 100%;
+    background-color: #2ec4b6;
+    position: relative;
+}
+
+.form-bloc {
+    height: 50em;
+    width: 43.125em;
+    background-color: #f5f5f5;
+    border-radius: 30px;;
+}

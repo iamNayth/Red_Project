@@ -47,3 +47,12 @@ function addPicture() {
         }
 
 }
+
+function suppPicture($id, $database) {
+    $database = dbConnect();
+
+    $query = 'DELETE FROM pictures WHERE id=:id'; 
+    $req = $database->prepare($query);
+    $req->bindValue(':id', $id, PDO::PARAM_INT);
+    $req->execute();
+}

@@ -88,4 +88,14 @@ function addProducts() {
     }
 return $msg;
 } 
+
+function suppProduct($id, $database)
+{
+    $database = dbConnect();
+
+    $query = 'DELETE FROM products WHERE id=:id'; 
+    $req = $database->prepare($query);
+    $req->bindValue(':id', $id, PDO::PARAM_INT);
+    $req->execute();
+}
     

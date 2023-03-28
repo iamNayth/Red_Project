@@ -1,5 +1,70 @@
 <?php $title = "Accueil"; ?>
 <?php ob_start(); ?>
+
+<section id="offer">
+    <div class="container-fluid h-100">
+        <div class="row h-100 p-5">
+            <div class="col text-center">
+                <img src="../assets/img/hero.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h1 class="tilt ps-5 ms-5">NOS MEILLEURES OFFRES</h1>
+    <div class="container pt-3 pb-3">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="card">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 <section id="infos" class="position-relative">
     <div class="container-fluid" id="logo-background">

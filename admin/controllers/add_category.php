@@ -2,17 +2,17 @@
 require_once('../model/connexion.php');
 require_once('../model/categorie_managment.php');
 
-function displayAdd_Categorie() {
+function displayAdd_Category() {
     $msg ="";
-    require('../templates/add_categorie.php');
+    require('../templates/add_category.php');
 
 }
 
-function validateAddCategorie() {
+function validateAddCategory() {
 
     if (isset($_POST['addCategorie'])) {
         $msg = addCategories();
-        require('../templates/add_categorie.php');
+        require('../templates/add_category.php');
     }
     
 }

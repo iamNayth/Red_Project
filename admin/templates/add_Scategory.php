@@ -1,8 +1,8 @@
 <?php $title = "Ajouter"; ?>
 <?php ob_start(); ?>
-    <h1 class="mb-5"><a href="../public/index.php?page=sub_categorie" class="btn btn-secondary me-3">Retour</a>ACCUEIL</h1>
+    <h1 class="mb-5"><a href="../public/index.php?page=sub_category" class="btn btn-secondary me-3">Retour</a>ACCUEIL</h1>
     <h2 class="mb-5">Ajouter une sous-catégorie</h2>
-        <form action="index.php?page=validate_add_scategorie" method="POST">
+        <form action="index.php?page=validate_add_scategory" method="POST">
             <label class="form-label">Nom</label>
             <input type="text" class="form-control mb-3" placeholder="Nom" name="name">
             <label class="form-label">Description</label>

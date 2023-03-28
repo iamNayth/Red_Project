@@ -98,7 +98,7 @@ function addS_Categories()
     return $msg;   
 }
 
-function suppCategorie($id, $database)
+function suppCat($id, $database)
 {
     $database = dbConnect();
 
@@ -107,7 +107,7 @@ function suppCategorie($id, $database)
     $req->bindValue(':id', $id, PDO::PARAM_INT);
     $req->execute();
 }
-function suppSCategorie($id, $database)
+function suppSubCat($id, $database)
 {
     $database = dbConnect();
 
@@ -117,7 +117,7 @@ function suppSCategorie($id, $database)
     $req->execute();
 }
 
-function recupCategorieId($id) {
+function recupCategoryId($id) {
     $database = dbConnect();
 
     $statement = $database->prepare("SELECT * FROM categories WHERE id = :id");
@@ -126,7 +126,7 @@ function recupCategorieId($id) {
     $categorie = $statement-> fetch(PDO::FETCH_ASSOC);
     return $categorie;
 }
-function recupSubCategorieId($id) {
+function recupSubCategoryId($id) {
     $database = dbConnect();
 
     $statement = $database->prepare("SELECT * FROM subcategories WHERE id = :id");
@@ -136,7 +136,7 @@ function recupSubCategorieId($id) {
     return $subcategorie;
 }
 
-function editCategorie($id) {
+function editCategory($id) {
     $database = dbConnect();
     if ((!isset($_POST['name']) || empty($_POST['name']))
     || (!isset($_POST['description']) || empty($_POST['description']))) {     
@@ -171,7 +171,7 @@ function editCategorie($id) {
         }
     }
 }
-function editSubCategorie($id) {
+function editSubCategory($id) {
     $database = dbConnect();
     if ((!isset($_POST['name']) || empty($_POST['name']))
     || (!isset($_POST['description']) || empty($_POST['description']))) {     

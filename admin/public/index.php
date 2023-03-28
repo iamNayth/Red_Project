@@ -3,25 +3,27 @@
 session_start();
 
 
-
 try {
     //Controllers
-    require_once('../controllers/categorie.php');
-    require_once('../controllers/sub_categorie.php');
-    require_once('../controllers/add_categorie.php');
-    require_once('../controllers/add_Scategorie.php');
-    require_once('../controllers/edit_categorie.php');
-    require_once('../controllers/edit_Scategorie.php');
-    require_once('../controllers/delete_Scategorie.php');
+    require_once('../controllers/category.php');
+    require_once('../controllers/sub_category.php');
+    require_once('../controllers/add_category.php');
+    require_once('../controllers/add_Scategory.php');
+    require_once('../controllers/edit_category.php');
+    require_once('../controllers/edit_Scategory.php');
+    require_once('../controllers/delete_Scategory.php');
+    require_once('../controllers/delete_category.php');
 
     require_once('../controllers/homepage.php');
     require_once('../controllers/admin.php');
     require_once('../controllers/picture.php');
+    require_once('../controllers/add_picture.php');
+    require_once('../controllers/delete_picture.php');
     require_once('../controllers/products.php');
     require_once('../controllers/add_product.php');
+    require_once('../controllers/delete_product.php');
     require_once('../controllers/orders.php');
     require_once('../controllers/users.php');
-    require_once('../controllers/add_picture.php');
     
     if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
     
@@ -42,56 +44,71 @@ try {
         elseif ($page == "accueil") {
             displayHomepage();
         }
-        elseif ($page == "categorie") {
-            displayCategorie();
+        //CATEGORIE
+        elseif ($page == "category") {
+            displayCategory();
         }
-        elseif ($page == "sub_categorie") {
-            displaySub_Categorie();
+        elseif ($page == "edit_category") {
+            displayEdit_Category();
         }
-        elseif ($page == "delete_Scategorie") {
+        elseif ($page == "validate_edit_category") {
+            validate_edit_category();
+        }
+        elseif ($page == "validate_add_category") {
+            validateAddCategory();
+        }
+        elseif ($page == "add_category") {
+            displayAdd_Category();
+        }
+        elseif ($page == "delete_category") {
+            deleteCategory();
+        }
+        //SUB-CATEGORY
+        elseif ($page == "sub_category") {
+            displaySub_Category();
+        }
+        elseif ($page == "add_Scategory") {
+            displayAdd_SCategory();
+        }
+        elseif ($page == "validate_edit_subCategory") {
+            validate_edit_subCategory();
+        }
+        elseif ($page == "delete_Scategory") {
             delete_Scat();
         }
+        elseif ($page == "edit_Scategory") {
+            displayEdit_SCategory();
+        }
+        elseif ($page == "validate_add_scategory") {
+            validate_add_subCategory();
+        }
+        //PICTURES
         elseif ($page == "picture") {
             displayPicture();
         }
+        elseif ($page == "add_picture") {
+            displayAdd_Picture();
+        }
+        elseif ($page == "delete_picture") {
+            deletePictures();
+        }
+        //PRODUCTS
         elseif ($page == "products") {
             displayProduct();
         }
         elseif ($page == "add_product") {
             displayAdd_Product();
         }
+        elseif ($page == "delete_product") {
+            deleteProduct();
+        }
+        //ORDERS
         elseif ($page == "orders") {
             displayOrder();
         }
+        //USERS
         elseif ($page == "users") {
             displayUser();
-        }
-        elseif ($page == "add_categorie") {
-            displayAdd_Categorie();
-        }
-        elseif ($page == "validate_add_categorie") {
-            validateAddCategorie();
-        }
-        elseif ($page == "add_Scategorie") {
-            displayAdd_SCategorie();
-        }
-        elseif ($page == "validate_add_scategorie") {
-            validate_add_subCategorie();
-        }
-        elseif ($page == "edit_categorie") {
-            displayEdit_Categorie();
-        }
-        elseif ($page == "validate_edit_categorie") {
-            validate_edit_categorie();
-        }
-        elseif ($page == "edit_Scategorie") {
-            displayEdit_SCategorie();
-        }
-        elseif ($page == "validate_edit_subCategorie") {
-            validate_edit_subCategorie();
-        }
-        elseif ($page == "add_picture") {
-            displayAdd_Picture();
         }
     } else {
         displayHomepage();

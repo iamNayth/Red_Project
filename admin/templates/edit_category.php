@@ -1,12 +1,12 @@
 <?php $title = "Modifier"; ?>
 <?php ob_start();?>
 
-    <h1 class="mb-5"><a href="../public/index.php?page=categorie" class="btn btn-secondary me-3">Retour</a>Modifier</h1>
+    <h1 class="mb-5"><a href="../public/index.php?page=category" class="btn btn-secondary me-3">Retour</a>Modifier</h1>
     <h3 class="text-success"><?=$msg?></h3>
     <section class="d-flex justify-centent-between gap-5 w-100">
     <div class="w-50">
         <h2 class="mb-5">Modifier une catégorie</h2>
-        <form action="../public/index.php?page=validate_edit_categorie&id=<?php echo $categorie['id']?>" method="POST" enctype="multipart/form-data">
+        <form action="../public/index.php?page=validate_edit_category&id=<?php echo $categorie['id']?>" method="POST" enctype="multipart/form-data">
             <label class="form-label">Nom</label>
             <input type="text" class="form-control mb-3" placeholder="Nom" name="name" value=<?=$categorie['name']?>>
             <label class="form-label">Description</label>

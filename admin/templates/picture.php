@@ -22,7 +22,7 @@
             <td><?=$images['name']?></td>
             <td><?=$images['path']?></td>
             <td><img src="<?=$images['path']?>" class="rounded"></td>
-            <td><a href="index.php?page=picture&id=<?php echo $images['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
+            <td><a href="index.php?page=delete_picture&id=<?php echo $images['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
         </tr>
         <?php
         }

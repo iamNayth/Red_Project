@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-end gap-3">
                     <a href=""><img src="../admin/assets/icons/cart.svg"></a>
-                    <a href=""><div id="profile-picture"></div></a>
+                    <a href="../public/index.php?page=sign-in"><div id="profile-picture"></div></a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
         <a href="../public/index.php?page=accueil" class="text-white">Accueil</a>
         <a href="../public/index.php?page=products" class="text-white">Produits</a>
         <a href="../public/index.php?page=picture" class="text-white">Photos</a>
-        <a href="../public/index.php?page=categorie" class="text-white">Catégories</a>
+        <a href="../public/index.php?page=category" class="text-white">Catégories</a>
         <a href="../public/index.php?page=orders" class="text-white">Commandes</a>
         <a href="../public/index.php?page=users" class="text-white">Clients</a>
         <a href="../public/index.php?page=admin" class="text-white">Admin</a>

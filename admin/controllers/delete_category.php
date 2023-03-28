@@ -1,15 +1,15 @@
-<?php
+<?php 
 
 require_once('../model/connexion.php');
 require_once('../model/categorie_managment.php');
 
-function delete_Scat() {
+function deleteCategory() {
 
     if (isset($_GET['id'])) {
         $id = intval($_GET['id']);
         $database = dbConnect();
-        suppSCategorie($id, $database);  
-        require('../templates/sub_categorie.php');
+        suppCat($id, $database);  
+        require('../templates/category.php');
     }
     
 }

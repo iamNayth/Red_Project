@@ -23,7 +23,7 @@
             <td><?=$product['description']?></td>
             <td><?=$product['price']?></td>
             <td><?=$product['pic_path']?></td>
-            <td><a href="index.php?page=prod$products&id=<?php echo $product['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
+            <td><a href="index.php?page=delete_product$products&id=<?php echo $product['id']?>" class="btn btn-danger w-100" onclick="return(confirm('Voulez-vous supprimer cette entrée ?'));">Supprimer</a></td>
         </tr>
         <?php
         }
