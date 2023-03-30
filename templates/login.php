@@ -11,9 +11,9 @@
     <link href="../assets/style_sign-in.css" rel="stylesheet" />
 </head>
   <body>
-      <section id="sign-in">
-         <img src="../admin/assets/icons/logo-info.svg" id="logo_sign">
-         <img src="../assets/img/inscription-bg.png" id="illustration">
+      <section id="login">
+         <img src="../admin/assets/icons/Logo.svg" id="logo_sign">
+         <img src="../assets/img/Connexion-bg.png" id="illustration2">
           <div class="container-fluid h-100">
               <div class="row h-100">
                   <div class="col d-flex align-items-center" style="margin-left: 50%">
@@ -22,25 +22,16 @@
                           <div class="container-fluid h-100 p-3">
                             <div class="row gy-3">
                                 <div class="col-12 d-flex align-items-center gap-3 mb-5">
-                                <a href="../public/index.php?page=homepage"><img src="../assets/icons/return-down-back.svg"></a>
-                                    <h1 class="tilt color1 fs-2">NOUVEAU CLIENT ? PAR ICI.</h1>
+                                    <a href="../public/index.php?page=homepage"><img src="../assets/icons/return-down-back.svg"></a>
+                                    <h1 class="tilt color1 fs-2">MOT DE PASSE S'IL VOUS PLAIT.</h1>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center">
-                                  <input name="surname" type="text" placeholder="Prénom"><br>
-                                  <input name="name" type="text" placeholder="Nom"><br>
                                   <input name="mail" type="text" placeholder="Adresse e-mail"><br>
                                   <input name="password" type="password" placeholder="Mot de passe"><br>
                                 </div>
-                                <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3 ps-5 pe-5">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label opacity-50" for="flexCheckDefault">J'accepte de recevoir les meilleurs plan et la newsletter par mail.</label>
-                                  </div>
-                                  <p class="text-center mont">En créant un compte vous acceptez les <strong>Conditions générales d'utilisation</strong> , les <strong>Conditions générales de ventes</strong> et la <strong>Politique de Confidentialité</strong> de <strong>Soltech</strong> et affirmez avoir plus de 16 ans.</p>
-                                </div>
-                                <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3">
-                                  <button class="button1 montbold">M'inscrire</button>
-                                  <a href="../public/index.php?page=login" class="button2 montbold">J'ai déjà un compte<a></a>
+                                <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3 mb-3">
+                                  <button class="button1 montbold">Me connecter</button>
+                                  <a href="../public/index.php?page=sign-in" class="button2 montbold">Je suis nouveau<a></a>
                                 </div>
                             </div>
                           </div>

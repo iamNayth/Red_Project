@@ -34,9 +34,15 @@ body {
     background-color: #2ec4b6;
     position: relative;
 }
+#login {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    position: relative;
+}
 
 .form-bloc {
-    height: 50em;
+    max-height: 50em;
     width: 43.125em;
     background-color: #f5f5f5;
     border-radius: 30px;;
@@ -48,11 +54,17 @@ body {
     left:10px;
     height: 60px;
     width: 60px;
+    z-index: 2;
 }
 
 #illustration {
     position: absolute;
     left: 10%;
+}
+#illustration2 {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
 }
 
 input {
@@ -62,6 +74,13 @@ input {
     height: 60px;
     font-family: 'Montserrat', sans-serif;
     padding-left: 15px;
+    transition: all ease-in 0.2s ;
+    
+}
+input:hover {
+    transform: scale(105%);
+    -webkit-box-shadow: 0px 5px 22px -7px rgba(0,0,0,0.72); 
+    box-shadow: 0px 5px 22px -7px rgba(0,0,0,0.72);
 }
 
 input:focus {
@@ -98,7 +117,7 @@ p {
     border: solid 3px #496992;
     border-radius: 15px;
     color: #496992;
-    background:none;
+    background:#2ec4b6;
     transform: scale(110%);
 }
 .button2 {
@@ -118,4 +137,7 @@ p {
 }
 strong {
     text-decoration: underline;
+}
+a {
+    text-decoration: none;
 }

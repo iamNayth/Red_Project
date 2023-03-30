@@ -8,6 +8,8 @@ try {
     //Controllers
     require_once('../controllers/homepage.php');
     require_once('../controllers/sign_in.php');
+    require_once('../controllers/login.php');
+    require_once('../controllers/categories.php');
     
     // if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
     
@@ -23,7 +25,13 @@ try {
         elseif ($page == "sign-in") {
             displaySignIn();
         }
-
+        elseif ($page == "login") {
+            displayLogIn();
+        }
+        elseif ($page == "categories") {
+            displayCategories();
+        }
+        
     } else {
         displayHomepage();
     }

@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-end gap-3">
                     <a href=""><img src="../admin/assets/icons/cart.svg"></a>
-                    <a href="../public/index.php?page=sign-in"><div id="profile-picture"></div></a>
+                    <a href="../public/index.php?page=login"><img src="../admin/assets/icons/user.svg" id="profile-picture"></img></a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                     <ul class="d-flex justify-content-between w-100 h-100 align-items-center montbold  fs-6 color1">
                         <a href="../public/index.php?page=homepage" class="color1"><li>ARTICLES</li></a>
                         <a href="../public/index.php?page=homepage" class="color1"><li>ACCUEIL</li></a>
-                        <a href="../public/index.php?page=homepage" class="color1"><li>CATEGORIE</li></a>
+                        <a href="../public/index.php?page=categories" class="color1"><li>CATEGORIE</li></a>
                     </ul>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">

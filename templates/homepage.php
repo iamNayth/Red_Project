@@ -11,8 +11,8 @@
     </div>
 </section>
 <section>
-    <h1 class="tilt ps-5 ms-5">NOS MEILLEURES OFFRES</h1>
-    <div class="container pt-3 pb-3">
+    <h1 class="tilt ps-5 ms-5 color1">NOS MEILLEURES OFFRES</h1>
+    <div class="container pt-5 pb-5">
         <div class="row">
             <div class="col d-flex justify-content-center">
                 <div class="card">
@@ -65,6 +65,73 @@
         </div>
     </div>
 </section>
+<section>
+    <h1 class="tilt ps-5 ms-5 color1">LES PLUS POPULAIRES</h1>
+    <div class="container pt-5 pb-5">
+        <div class="row gy-4">
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card w-100">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card w-100">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="card medium">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="card medium">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="card medium">
+                    <div class="img-product">
+
+                    </div>
+                    <div class="info-product p-2 d-flex flex-column justify-content-around p-1">
+                        <span class="fs-4 montbold text-light w-100">Titre</span><br>
+                        <span class="fs-6 mont text-light w-100">Description</span><br>
+                        <span class="montbold text-end text-light w-100 fs-5 pe-3">Prix</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 <section id="infos" class="position-relative">
     <div class="container-fluid" id="logo-background">
@@ -76,7 +143,7 @@
                 </div>
                 <p class="mont fs-4 text-light">Chez Soltech, nous mettons un point d’honneur à ce que nos relations avec nos clients se passe de manière excellente tout au long du processus d’achat.</p>
                 <span class="mont fs-3 fw-bold text-light mb-5">C'est pourquoi :</span>
-                <div class="w-100 d-flex justify-content-center align-items-center mt-5"><button class="lex">Contactez-nous</button></div>
+                <div class="w-100 d-flex justify-content-center align-items-center mt-5"><button class="lex button2">Contactez-nous</button></div>
             </div>
             <div class="col-8">
                 <div class="row">
