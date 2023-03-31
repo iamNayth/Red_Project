@@ -43,7 +43,7 @@ function addCategories() {
     
     if ((!isset($_POST['name']) || empty($_POST['name']))
     || (!isset($_POST['description']) || empty($_POST['description']))) {       
-        echo 'Il faut faut remplir tous les champs';
+        $msg = 'Il faut faut remplir tous les champs';
     } else {
         $name = strip_tags($_POST['name']);
         $description = strip_tags($_POST['description']);
@@ -58,9 +58,10 @@ function addCategories() {
                 
                 if (in_array($extension, $allowedExtensions)) {
                     // On peut valider le fichier et le stocker définitivement
-                    $path = '../assets/uploads/' . basename($_FILES['picture']['name']);
+                    $path = '../admin/assets/uploads/' . basename($_FILES['picture']['name']);
                     move_uploaded_file($_FILES['picture']['tmp_name'], $path);
                     
+                    $msg = "S'arrete au deplacement";
                     
                     $sth = $database->prepare("INSERT INTO `categories`(`name`,`description`,`img_path`) VALUES (:name,:description,:img_path)");
                     $sth->bindParam(':name', $name, PDO::PARAM_STR);
