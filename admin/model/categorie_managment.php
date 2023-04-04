@@ -36,6 +36,15 @@ function getS_Categories() {
     }
     return $s_categories;
 }
+function getSubCatByCatId($id) {
+    $database = dbConnect();
+
+    $statement = $database->prepare("SELECT * FROM subcategories WHERE id_categories = :id_cat");
+    $statement -> bindValue(':id_cat', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $subCatById = $statement -> fetchAll();
+    return $subCatById;
+}
 
 function addCategories() {
     $msg = "";

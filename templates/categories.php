@@ -9,13 +9,13 @@
             <div class="col-4 d-flex align-items-center justify-content-center">
                 <div class="catCard position-relative d-flex flex-column justify-content-center gap-3">
                     <div class="links">
-                        <?php foreach ($s_categories as $s_category) { ?>
-                            <a class="sousCat text-center" href=""> <?= $s_category['name'] ?> </a>
+                        <?php foreach (getSubCatByCatId($category['id']) as $subCat) { ?>
+                            <a class="sousCat text-center" href="../public/index.php?page=show_products&id=<?php echo $subCat['id']?>"> <?= $subCat['name'] ?> </a>
                         <?php } ?>
                     </div>
                     <div class="white-bg"></div>
                     <h4 class="catName"> <?= $category['name'] ?> </h4>
-                    <img class="catImage" src=" <?= $category['img_path'] ?>"> 
+                    <img class="catImage img-fluid" src=" <?= $category['img_path'] ?>"> 
                 </div>
             </div>
 

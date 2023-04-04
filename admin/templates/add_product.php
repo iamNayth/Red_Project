@@ -28,6 +28,14 @@
             <label for="formFile" class="form-label">Ajouter une cinquième image</label>
             <input type="text" class="form-control mb-3" placeholder="Nom de la cinquième image" name="name_picture-5">
             <input class="form-control mb-3" type="file" name="picture-5">
+            <select class="form-select mb-3" aria-label="Default select example" name='id_scat'>
+            <?php
+            foreach($s_categories as $s_categorie){?>
+                <option value='<?=$s_categorie['id']?>'><?=$s_categorie['name'];?></option>
+            <?php
+            }
+            ?>
+            </select>
             <button class="btn btn-primary" type="submit" name="addProducts">Ajouter</button>
         </form>
     </div>

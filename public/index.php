@@ -10,6 +10,7 @@ try {
     require_once('../controllers/sign_in.php');
     require_once('../controllers/login.php');
     require_once('../controllers/categories.php');
+    require_once('../controllers/show_products.php');
     
     // if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
     
@@ -30,6 +31,9 @@ try {
         }
         elseif ($page == "categories") {
             displayCategories();
+        }
+        elseif ($page == "show_products") {
+            displayShowProducts();
         }
         
     } else {

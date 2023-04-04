@@ -34,14 +34,16 @@ function addProducts() {
         $description = strip_tags($_POST['description']);
         $price = strip_tags($_POST['price']);
         $ident_product = time();
+        $id_scategories = ($_POST['id_scat']);
         
         
-        $sql = "INSERT INTO products (ident_product, name, description, price) VALUES (:ident_product, :name,:description,:price)";
+        $sql = "INSERT INTO products (ident_product, name, description, price, id_subcategory) VALUES (:ident_product, :name,:description,:price, :id_subcategory)";
         $stmt= $database->prepare($sql);
         $stmt->bindParam(':ident_product', $ident_product, PDO::PARAM_INT);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':description', $description, PDO::PARAM_STR);
         $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+        $stmt->bindParam(':id_subcategory', $id_scategories, PDO::PARAM_INT);
         $stmt->execute();
 
         //On recupère l'id du produit ajouté précédement
