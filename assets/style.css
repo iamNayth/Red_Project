@@ -124,7 +124,6 @@ footer {
     border: solid 3px #496992;
     border-radius: 15px;
     padding: 15px 30px;
-    color: white;
     background:none;
     color: #496992;
     transition: all ease-in 0.2s;
@@ -133,6 +132,21 @@ footer {
     border: solid 3px #496992;
     color: white;
     background: #496992;
+    transform: scale(110%);
+}
+.button3 {
+    border: solid 3px #496992;
+    border-radius: 15px;
+    padding: 10px 30px;
+    color: white;
+    background: #496992;
+    transition: all ease-in 0.2s;
+    font-size: 18px;
+}
+.button3:hover {
+    border: solid 3px #496992;
+    color: #496992;
+    background: none;
     transform: scale(110%);
 }
 

@@ -11,6 +11,7 @@ try {
     require_once('../controllers/login.php');
     require_once('../controllers/categories.php');
     require_once('../controllers/show_products.php');
+    require_once('../controllers/details.php');
     
     // if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
     
@@ -34,6 +35,9 @@ try {
         }
         elseif ($page == "show_products") {
             displayShowProducts();
+        }
+        elseif ($page == "details") {
+            displayDetails();
         }
         
     } else {

@@ -67,7 +67,7 @@ function addProducts() {
                     // Testons si l'extension est autorisée
                     $fileInfo = pathinfo($_FILES['picture-' . $i]['name']);
                     $extension = $fileInfo['extension'];
-                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'jfif', 'webp', 'avif'];
                     
                     if (in_array($extension, $allowedExtensions)) {
                         // On peut valider le fichier et le stocker définitivement
