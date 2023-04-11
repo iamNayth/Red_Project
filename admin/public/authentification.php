@@ -23,7 +23,6 @@ if (isset($_POST['submit'])){
                 echo "Mauvais mot de passe.";
                 echo password_hash('1234', PASSWORD_DEFAULT);
                 
-                
             }
         } catch (PDOException $e){
             print "Erreur !: " . $e->getMessage() . "<br/>";

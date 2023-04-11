@@ -19,3 +19,22 @@ function getProductsInfo($id) {
     $prodInfos = $statement-> fetchAll(PDO::FETCH_ASSOC);
     return $prodInfos;
 }
+function getSizes() {
+    $database = dbConnect();
+
+    $statement = $database->prepare("SELECT * FROM storage");
+    $statement->execute();
+    $storage = $statement-> fetchAll(PDO::FETCH_ASSOC);
+    return $storage;
+}
+
+function getRandomProducts() {
+    $database = dbConnect();
+
+    $statement = $database->prepare("SELECT prod.*, pic.path , pic.id_products FROM products prod 
+                                    INNER JOIN pictures pic ON prod.id = pic.id_products WHERE pic.name = 'image1'
+                                    ORDER BY RAND() LIMIT 4");
+    $statement->execute();
+    $randomProd = $statement-> fetchAll(PDO::FETCH_ASSOC);
+    return $randomProd;
+}
