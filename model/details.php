@@ -33,7 +33,7 @@ function getRandomProducts() {
 
     $statement = $database->prepare("SELECT prod.*, pic.path , pic.id_products FROM products prod 
                                     INNER JOIN pictures pic ON prod.id = pic.id_products WHERE pic.name = 'image1'
-                                    ORDER BY RAND() LIMIT 4");
+                                    ORDER BY RAND()");
     $statement->execute();
     $randomProd = $statement-> fetchAll(PDO::FETCH_ASSOC);
     return $randomProd;

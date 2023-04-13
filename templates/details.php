@@ -83,71 +83,41 @@
     </div>
 </section>
 <section class="p-5" style="background: #2ec4b6">   
+<h2 class="tilt fs-2 text-light mb-3">CA POURRAIT BIEN VOUS INTERESSER</h2>
+    <!-- carousel cards 4/4 -->
       <div id="carouselExample" class="carousel slide mb-5">
         <div class="carousel-inner">
             <div class="container">
-            <h2 class="tilt fs-2 text-light mb-3">CA POURRAIT BIEN VOUS INTERESSER</h2>
-              <div class="carousel-item active">
-                <div class="row">
-                    <?php foreach($randomProd as $prod) { ?>
-                    <div class="col-3 d-flex justify-content-center">
-                        <a href="../public/index.php?page=details&id=<?php echo $prod['id']?>">
-                            <div class="card">
-                                <div class="img-product p-2 d-flex justify-content-center">
-                                    <img class="img-fluid h-100" src="<?= str_replace('../assets/', '../admin/assets/', $prod['path'])?>">
-                                </div>
-                                <div class="info-product ps-2 d-flex flex-column justify-content-around p-1">
-                                    <div><span class="fs-4 montbold text-light w-100"><?= $prod['name']?></span><br></div>
-                                    <div class="d-inline text-truncate text-light"><span class="fs-6 mont text-light"><?= $prod['description']?></span><br></div>
-                                    <div class="text-end"><span class="montbold text-end text-light w-100 fs-5 pe-3"><?= $prod['price']?> €</span></div>
-                                </div>
+                
+              <?php 
+              $i=1;
+            
+                foreach($randomProd as $prod) { ?>
+                <?= ($i == 1 ) ? '<div class="carousel-item active"><div class="row">' : '' ?>
+                <?= ($i % 5 == 0 ) ? '<div class="carousel-item"><div class="row">' : '' ?>
+
+                <div class="col-3 d-flex justify-content-center">
+                    <a href="../public/index.php?page=details&id=<?php echo $prod['id']?>">
+                        <div class="card">
+                            <div class="img-product p-2 d-flex justify-content-center">
+                                <img class="img-fluid h-100" src="<?= str_replace('../assets/', '../admin/assets/', $prod['path'])?>">
                             </div>
-                        </a>
-                    </div>                
-                    <?php } ?>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row">
-                <?php foreach($randomProd as $prod) { ?>
-                    <div class="col-3 d-flex justify-content-center">
-                        <a href="../public/index.php?page=details&id=<?php echo $prod['id']?>">
-                            <div class="card">
-                                <div class="img-product p-2 d-flex justify-content-center">
-                                    <img class="img-fluid h-100" src="<?= str_replace('../assets/', '../admin/assets/', $prod['path'])?>">
-                                </div>
-                                <div class="info-product ps-2 d-flex flex-column justify-content-around p-1">
-                                    <div><span class="fs-4 montbold text-light w-100"><?= $prod['name']?></span><br></div>
-                                    <div class="d-inline text-truncate text-light"><span class="fs-6 mont text-light"><?= $prod['description']?></span><br></div>
-                                    <div class="text-end"><span class="montbold text-end text-light w-100 fs-5 pe-3"><?= $prod['price']?> €</span></div>
-                                </div>
+                            <div class="info-product ps-2 d-flex flex-column justify-content-around p-1">
+                                <div><span class="fs-4 montbold text-light w-100"><?= $prod['name']?></span><br></div>
+                                <div class="d-inline text-truncate text-light"><span class="fs-6 mont text-light"><?= $prod['description']?></span><br></div>
+                                <div class="text-end"><span class="montbold text-end text-light w-100 fs-5 pe-3"><?= $prod['price']?> €</span></div>
                             </div>
-                        </a>
-                    </div>                
-                    <?php } ?>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row">
-                <?php foreach($randomProd as $prod) { ?>
-                    <div class="col-3 d-flex justify-content-center">
-                        <a href="../public/index.php?page=details&id=<?php echo $prod['id']?>">
-                            <div class="card">
-                                <div class="img-product p-2 d-flex justify-content-center">
-                                    <img class="img-fluid h-100" src="<?= str_replace('../assets/', '../admin/assets/', $prod['path'])?>">
-                                </div>
-                                <div class="info-product ps-2 d-flex flex-column justify-content-around p-1">
-                                    <div><span class="fs-4 montbold text-light w-100"><?= $prod['name']?></span><br></div>
-                                    <div class="d-inline text-truncate text-light"><span class="fs-6 mont text-light"><?= $prod['description']?></span><br></div>
-                                    <div class="text-end"><span class="montbold text-end text-light w-100 fs-5 pe-3"><?= $prod['price']?> €</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                
-                    <?php } ?>
-                </div>
-              </div>
+                        </div>
+                    </a>
+                </div>    
+                           
+                <?= (($i % 4 == 0) ? '</div></div>' : '') ?>
+                <?php
+                    $i++;
+                } ?>
             </div>
+            </div>
+
             <button id="btn" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -156,10 +126,8 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          </div>
         </div>
-        </div>
-    </div>
+
 </section>
 
 <?php $content = ob_get_clean();?>
