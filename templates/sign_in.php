@@ -18,7 +18,7 @@
               <div class="row h-100">
                   <div class="col d-flex align-items-center" style="margin-left: 50%">
                       <div class="form-bloc z-2">
-                        <form action="#">
+                        <form action="index.php?page=add_user" method="post">
                           <div class="container-fluid h-100 p-3">
                             <div class="row gy-3">
                                 <div class="col-12 d-flex align-items-center gap-3 mb-5">
@@ -26,20 +26,20 @@
                                     <h1 class="tilt color1 fs-2">NOUVEAU CLIENT ? PAR ICI.</h1>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center">
-                                  <input name="surname" type="text" placeholder="Prénom"><br>
+                                  <input name="first_name" type="text" placeholder="Prénom"><br>
                                   <input name="name" type="text" placeholder="Nom"><br>
-                                  <input name="mail" type="text" placeholder="Adresse e-mail"><br>
+                                  <input name="email" type="text" placeholder="Adresse e-mail"><br>
                                   <input name="password" type="password" placeholder="Mot de passe"><br>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3 ps-5 pe-5">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
                                     <label class="form-check-label opacity-50" for="flexCheckDefault">J'accepte de recevoir les meilleurs plan et la newsletter par mail.</label>
                                   </div>
                                   <p class="text-center mont">En créant un compte vous acceptez les <strong>Conditions générales d'utilisation</strong> , les <strong>Conditions générales de ventes</strong> et la <strong>Politique de Confidentialité</strong> de <strong>Soltech</strong> et affirmez avoir plus de 16 ans.</p>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3">
-                                  <button class="button1 montbold">M'inscrire</button>
+                                  <button type="submit" class="button1 montbold">M'inscrire</button>
                                   <a href="../public/index.php?page=login" class="button2 montbold">J'ai déjà un compte<a></a>
                                 </div>
                             </div>

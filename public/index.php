@@ -13,10 +13,6 @@ try {
     require_once('../controllers/show_products.php');
     require_once('../controllers/details.php');
     
-    // if(!isset($_SESSION['id']) || !isset($_SESSION['nickname'])) {
-    
-    //     header('location:authentification.php');
-    // }
     
     if( isset($_GET['page'])) {
         $page = strval($_GET['page']);
@@ -38,6 +34,12 @@ try {
         }
         elseif ($page == "details") {
             displayDetails();
+        }
+        elseif ($page == "add_user") {
+            validate_add_user();
+        }
+        elseif ($page == "connect") {
+            connect();
         }
         
     } else {

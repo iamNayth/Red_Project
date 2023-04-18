@@ -21,6 +21,7 @@
                     <img src="../admin/assets/icons/logotype.svg" class="h-50">
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-end gap-3">
+                    <span class="mont color1 fs-5"> Bienvenue  <strong><?php (isset($_SESSION['first_name'])) ? print($_SESSION['first_name']) : ''; ?></strong></span>
                     <a href=""><img src="../admin/assets/icons/cart.svg"></a>
                     <a href="../public/index.php?page=login"><img src="../admin/assets/icons/user.svg" id="profile-picture"></img></a>
                 </div>

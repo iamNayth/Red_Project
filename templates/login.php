@@ -18,7 +18,7 @@
               <div class="row h-100">
                   <div class="col d-flex align-items-center" style="margin-left: 50%">
                       <div class="form-bloc z-2">
-                        <form action="#">
+                        <form action="index.php?page=connect" method="post">
                           <div class="container-fluid h-100 p-3">
                             <div class="row gy-3">
                                 <div class="col-12 d-flex align-items-center gap-3 mb-5">
@@ -26,12 +26,13 @@
                                     <h1 class="tilt color1 fs-2">MOT DE PASSE S'IL VOUS PLAIT.</h1>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center">
-                                  <input name="mail" type="text" placeholder="Adresse e-mail"><br>
+                                  <input name="email" type="text" placeholder="Adresse e-mail"><br>
                                   <input name="password" type="password" placeholder="Mot de passe"><br>
                                 </div>
                                 <div class="col-12 d-flex flex-column align-items-center justify-content-center gap-3 mb-3">
-                                  <button class="button1 montbold">Me connecter</button>
+                                  <button type="submit" class="button1 montbold">Me connecter</button>
                                   <a href="../public/index.php?page=sign-in" class="button2 montbold">Je suis nouveau<a></a>
+                                  <?= $msg ?>
                                 </div>
                             </div>
                           </div>
