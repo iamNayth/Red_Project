@@ -12,7 +12,15 @@ try {
     require_once('../controllers/categories.php');
     require_once('../controllers/show_products.php');
     require_once('../controllers/details.php');
+    require_once('../controllers/orders.php');
+    require_once('../controllers/account.php');
     
+    if(isset($_GET['action']) && $_GET['action'] == "signout"){
+        session_destroy();
+        header('location: index.php');
+    } 
+
+    $pageActive = 1;
     
     if( isset($_GET['page'])) {
         $page = strval($_GET['page']);
@@ -40,6 +48,14 @@ try {
         }
         elseif ($page == "connect") {
             connect();
+        }
+        elseif ($page == "orders") {
+            $pageActive = 1;
+            displayOrders();
+        }
+        elseif ($page == "account") {
+            $pageActive = 2;
+            displayAccount();
         }
         
     } else {

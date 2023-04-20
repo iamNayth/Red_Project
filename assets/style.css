@@ -244,4 +244,15 @@ footer {
     opacity: 1;
 }
 
+/****Dashboard****/
+
+.dashboard-links {
+    opacity: 50%;
+    transition: all linear 0.2s;
+}
+.dashboard-links:hover {
+    opacity: 100%;
+    color: #496992;
+}
+
 

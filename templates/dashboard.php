@@ -23,7 +23,7 @@
                 <div class="col-4 d-flex align-items-center justify-content-end gap-3">
                     <span class="mont color1 fs-5">   <?php (isset($_SESSION['first_name'])) ? print('<strong>Bienvenue, </strong>'.$_SESSION['first_name']) : ''; ?></span>
                     <a href=""><img src="../admin/assets/icons/cart.svg"></a>
-                    <a href="<?= (isset($_SESSION['first_name'])) ? 'index.php?page=orders' : 'index.php?page=login'; ?>"><img src="../admin/assets/icons/user.svg" id="profile-picture"></img></a>
+                    <a href="<?php (isset($_SESSION['first_name'])) ? print('../public/index.php?page=account') : '../public/index.php?page=login'; ?>"><img src="../admin/assets/icons/user.svg" id="profile-picture"></img></a>
                 </div>
             </div>
         </div>
@@ -48,6 +48,21 @@
             </div>
         </div>
     </nav>
+    <section class="p-3">
+        <div class="dashboard-nav d-flex justify-content-center">
+            <div class="container w-25 bg-white rounded-2 pt-3 pb-3">
+                <div class="row">
+                    <div class="col-8 d-flex gap-4">
+                        <a class="dashboard-links mont" href="index.php?page=orders"<?= $pageActive == 1 ? 'style="opacity: 100%;"' : '' ?>>Mes commandes</a>
+                        <a class="dashboard-links mont" href="index.php?page=account" <?= $pageActive == 2 ? 'style="opacity: 100%;"' : '' ?>>Mon profil</a>
+                    </div>
+                    <div class="col-4 text-end">
+                        <a class="dashboard-links mont" href="index.php?action=signout" >Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <main>
         <?= $content ?>
     </main>
@@ -104,6 +119,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -56,6 +56,11 @@ function logIn() {
             if (password_verify($_POST['password'], $hash)){
                 $_SESSION['id']   = $row['id'];
                 $_SESSION['first_name'] = $row['first_name'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['billing_address'] = $row['billing_address'];
+                $_SESSION['delivery_address'] = $row['delivery_address'];
+                $_SESSION['phone_number'] = $row['phone_number'];
                 header('Location: index.php');
                 
             }else{
