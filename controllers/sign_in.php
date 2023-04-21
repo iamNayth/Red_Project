@@ -10,5 +10,5 @@ function displaySignIn() {
 
 function validate_add_user() {
     $users = addUser();
-    require('../templates/sign_in.php');
+    require('../templates/login.php');
 }
